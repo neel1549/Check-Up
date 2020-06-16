@@ -11,10 +11,22 @@ import {
 import LinearGradient from 'react-native-linear-gradient';
 import auth from '@react-native-firebase/auth';
 import {TouchableOpacity} from 'react-native-gesture-handler';
+import {GoogleSignin} from '@react-native-community/google-signin';
 
 const Login = (props) => {
   const [user, setUser] = useState('');
   const [password, setPassword] = useState('');
+
+  async function onGoogleButtonPress() {
+    // Get the users ID token
+    const {idToken} = await GoogleSignin.signIn();
+
+    // Create a Google credential with the token
+    const googleCredential = auth.GoogleAuthProvider.credential(idToken);
+
+    // Sign-in the user with the credential
+    return auth().signInWithCredential(googleCredential);
+  }
 
   const authenticate = () => {
     auth()
@@ -60,6 +72,15 @@ const Login = (props) => {
 
         <TouchableOpacity style={styles.button} onPress={register}>
           <Button title={'Register'} color="orange" />
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() =>
+            onGoogleButtonPress().then(() =>
+              console.log('Signed in with Google!'),
+            )
+          }>
+          <Button title="Google Sign-In" />
         </TouchableOpacity>
       </View>
     </View>

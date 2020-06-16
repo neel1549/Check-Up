@@ -13,6 +13,7 @@
 #import <SKIOSNetworkPlugin/SKIOSNetworkAdapter.h>
 #import <FlipperKitReactPlugin/FlipperKitReactPlugin.h>
 #import "RNSplashScreen.h"
+#import <GoogleMaps/GoogleMaps.h>
 
 static void InitializeFlipper(UIApplication *application) {
   FlipperClient *client = [FlipperClient sharedClient];
@@ -29,9 +30,12 @@ static void InitializeFlipper(UIApplication *application) {
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+
 if ([FIRApp defaultApp] == nil) {
     [FIRApp configure];
   }
+[GMSServices provideAPIKey:@"AIzaSyAtBj_iX2WW2bYNKg1iyB5b1fEphwYrjzw"];
+
 #if DEBUG
   InitializeFlipper(application);
 #endif
