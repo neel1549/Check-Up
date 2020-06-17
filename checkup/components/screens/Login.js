@@ -7,33 +7,47 @@ import {
   TextInput,
   Button,
   StyleSheet,
+  Platform,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import auth from '@react-native-firebase/auth';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 
-import {GoogleSignin} from '@react-native-community/google-signin';
+import {
+  GoogleSignin,
+  GoogleSigninButton,
+} from '@react-native-community/google-signin';
 import {LoginManager, AccessToken} from 'react-native-fbsdk';
 
 const Login = (props) => {
   const [user, setUser] = useState('');
   const [password, setPassword] = useState('');
 
+  GoogleSignin.configure({
+    webClientId:
+      '561256439905-qeopqabu0bss9cj6mkbo7qm1j6k1ci0h.apps.googleusercontent.com',
+  });
+
   function onAuthStateChanged(user) {
-    props.navigation.navigate('Main');
+    if (user) {
+      props.navigation.navigate('Main');
+    }
   }
 
+  // Hook to detect if there's been a shift in authentication
   useEffect(() => {
     const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
     return subscriber; // unsubscribe on unmount
   }, []);
 
+  //Google Button boiler plate handle Sign in
   async function onGoogleButtonPress() {
     // Get the users ID token
     const {idToken} = await GoogleSignin.signIn();
 
     // Create a Google credential with the token
     const googleCredential = auth.GoogleAuthProvider.credential(idToken);
+    console.log('Signed in With Google');
 
     // Sign-in the user with the credential
     return auth().signInWithCredential(googleCredential);
@@ -66,12 +80,14 @@ const Login = (props) => {
     return auth().signInWithCredential(facebookCredential);
   }
 
+  // Sign the user in traditionally with username and password
   const authenticate = () => {
     auth()
       .signInWithEmailAndPassword(user, password)
       .then(
         (value) => {
           console.log(value);
+          // If a success, navigate to the Main page
           props.navigation.navigate('Main');
         },
         (reason) => {
@@ -113,12 +129,29 @@ const Login = (props) => {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.button}
-          onPress={() =>
-            onFacebookButtonPress().then(() =>
-              console.log('Signed in with Facebook!'),
-            )
-          }>
+          onPress={() => {
+            onFacebookButtonPress()
+              .then(() => console.log('Signed in with Facebook!'))
+              .catch(function (reason) {
+                console.log(reason);
+              });
+          }}>
           <Button title="Facebook Sign-In" />
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.button}>
+          <GoogleSigninButton
+            style={{width: 192, height: 48}}
+            size={GoogleSigninButton.Size.Wide}
+            color={GoogleSigninButton.Color.Dark}
+            onPress={() => {
+              onGoogleButtonPress()
+                .then(console.log('Signed in with Google'))
+                .catch(function (reason) {
+                  console.log(reason);
+                });
+            }}
+          />
         </TouchableOpacity>
       </View>
     </View>

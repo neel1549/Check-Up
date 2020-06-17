@@ -7,9 +7,20 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-			<string>fb580746799312423</string>
+				<string>fb580746799312423</string>
 			</array>
 		</dict>
+    <dict>
+      <key>CFBundleTypeRole</key>
+      <string>Editor</string>
+      <key>CFBundleURLName</key>
+      <string>com.googleusercontent.apps.561256439905-82q9tqfo4dnrkv5uuad3d0vajkgl8pvu</string>
+      <key>CFBundleURLSchemes</key>
+      <array>
+        <string>com.googleusercontent.apps.561256439905-82q9tqfo4dnrkv5uuad3d0vajkgl8pvu</string>
+      </array>
+      </dict>
+    
 	</array>
 	<key>FacebookAppID</key>
 	<string>580746799312423</string>
@@ -70,6 +81,5 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-	
 </dict>
 </plist>
