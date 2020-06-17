@@ -11,11 +11,22 @@ import {
 import LinearGradient from 'react-native-linear-gradient';
 import auth from '@react-native-firebase/auth';
 import {TouchableOpacity} from 'react-native-gesture-handler';
+
 import {GoogleSignin} from '@react-native-community/google-signin';
+import {LoginManager, AccessToken} from 'react-native-fbsdk';
 
 const Login = (props) => {
   const [user, setUser] = useState('');
   const [password, setPassword] = useState('');
+
+  function onAuthStateChanged(user) {
+    props.navigation.navigate('Main');
+  }
+
+  useEffect(() => {
+    const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
+    return subscriber; // unsubscribe on unmount
+  }, []);
 
   async function onGoogleButtonPress() {
     // Get the users ID token
@@ -26,6 +37,33 @@ const Login = (props) => {
 
     // Sign-in the user with the credential
     return auth().signInWithCredential(googleCredential);
+  }
+  async function onFacebookButtonPress() {
+    // Attempt login with permissions
+    console.log('helllo');
+    const result = await LoginManager.logInWithPermissions([
+      'public_profile',
+      'email',
+    ]);
+
+    if (result.isCancelled) {
+      throw 'User cancelled the login process';
+    }
+
+    // Once signed in, get the users AccesToken
+    const data = await AccessToken.getCurrentAccessToken();
+
+    if (!data) {
+      throw 'Something went wrong obtaining access token';
+    }
+
+    // Create a Firebase credential with the AccessToken
+    const facebookCredential = auth.FacebookAuthProvider.credential(
+      data.accessToken,
+    );
+
+    // Sign-in the user with the credential
+    return auth().signInWithCredential(facebookCredential);
   }
 
   const authenticate = () => {
@@ -76,11 +114,11 @@ const Login = (props) => {
         <TouchableOpacity
           style={styles.button}
           onPress={() =>
-            onGoogleButtonPress().then(() =>
-              console.log('Signed in with Google!'),
+            onFacebookButtonPress().then(() =>
+              console.log('Signed in with Facebook!'),
             )
           }>
-          <Button title="Google Sign-In" />
+          <Button title="Facebook Sign-In" />
         </TouchableOpacity>
       </View>
     </View>
@@ -92,7 +130,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#ecf0f1',
   },
   header: {
     position: 'absolute',

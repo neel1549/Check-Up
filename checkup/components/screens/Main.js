@@ -29,9 +29,6 @@ const Main = (props) => {
   return (
     <View style={styles.container}>
       <Text>Main Screen</Text>
-      <TouchableOpacity>
-        <Button title={'Logout'} color="orange" onPress={logout} />
-      </TouchableOpacity>
 
       <MapView
         provider={PROVIDER_GOOGLE}
@@ -43,6 +40,9 @@ const Main = (props) => {
           longitudeDelta: 0.0421,
         }}
       />
+      <TouchableOpacity>
+        <Button title={'Logout'} color="orange" onPress={logout} />
+      </TouchableOpacity>
     </View>
   );
 };

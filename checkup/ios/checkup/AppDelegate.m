@@ -1,5 +1,7 @@
 #import <Firebase.h>
 #import "AppDelegate.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+
 
 #import <React/RCTBridge.h>
 #import <React/RCTBundleURLProvider.h>
@@ -28,6 +30,7 @@ static void InitializeFlipper(UIApplication *application) {
 
 @implementation AppDelegate
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 
@@ -35,6 +38,9 @@ if ([FIRApp defaultApp] == nil) {
     [FIRApp configure];
   }
 [GMSServices provideAPIKey:@"AIzaSyAtBj_iX2WW2bYNKg1iyB5b1fEphwYrjzw"];
+
+[[FBSDKApplicationDelegate sharedInstance] application:application
+                           didFinishLaunchingWithOptions:launchOptions];
 
 #if DEBUG
   InitializeFlipper(application);
@@ -63,6 +69,21 @@ if ([FIRApp defaultApp] == nil) {
 #else
   return [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
 #endif
+
 }
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+  [FBSDKAppEvents activateApp];
+}
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+  return [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                         openURL:url
+                                               sourceApplication:sourceApplication
+                                                      annotation:annotation];
+}
+
 
 @end
