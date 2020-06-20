@@ -13,6 +13,7 @@ const Loading = (props) => {
     if (initializing) setInitializing(false);
   }
   const renderAuthentication = () => {
+    console.log('Movin');
     if (!user) {
       props.navigation.replace('Login');
     } else {
@@ -21,6 +22,7 @@ const Loading = (props) => {
   };
 
   useEffect(() => {
+    console.log('Hello');
     const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
     return subscriber; // unsubscribe on unmount
   }, []);

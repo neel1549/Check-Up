@@ -1,15 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {
-  View,
-  Text,
-  ActivityIndicator,
-  ScrollView,
-  TextInput,
-  Button,
-  StyleSheet,
-  Platform,
-} from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
+import {View, Text, TextInput, Button, StyleSheet} from 'react-native';
 import auth from '@react-native-firebase/auth';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 
@@ -42,6 +32,7 @@ const Login = (props) => {
 
   //Google Button boiler plate handle Sign in
   async function onGoogleButtonPress() {
+    console.log('hello');
     // Get the users ID token
     const {idToken} = await GoogleSignin.signIn();
 
@@ -139,20 +130,18 @@ const Login = (props) => {
           <Button title="Facebook Sign-In" />
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.button}>
-          <GoogleSigninButton
-            style={{width: 192, height: 48}}
-            size={GoogleSigninButton.Size.Wide}
-            color={GoogleSigninButton.Color.Dark}
-            onPress={() => {
-              onGoogleButtonPress()
-                .then(console.log('Signed in with Google'))
-                .catch(function (reason) {
-                  console.log(reason);
-                });
-            }}
-          />
-        </TouchableOpacity>
+        <GoogleSigninButton
+          style={styles.button}
+          size={GoogleSigninButton.Size.Wide}
+          color={GoogleSigninButton.Color.Dark}
+          onPress={() => {
+            onGoogleButtonPress()
+              .then(console.log('Signed in with Google'))
+              .catch(function (reason) {
+                console.log(reason);
+              });
+          }}
+        />
       </View>
     </View>
   );

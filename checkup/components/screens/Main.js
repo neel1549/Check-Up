@@ -13,17 +13,17 @@ const Main = (props) => {
     props.navigation.goBack();
   };
 
-  GetLocation.getCurrentPosition({
-    enableHighAccuracy: true,
-    timeout: 15000,
-  })
-    .then((location) => {
-      console.log(location);
-    })
-    .catch((error) => {
-      const {code, message} = error;
-      console.warn(code, message);
-    });
+  // GetLocation.getCurrentPosition({
+  //   enableHighAccuracy: true,
+  //   timeout: 15000,
+  // })
+  //   .then((location) => {
+  //     console.log(location);
+  //   })
+  //   .catch((error) => {
+  //     const {code, message} = error;
+  //     console.warn(code, message);
+  //   });
 
   //Hard Coded to Saratoga, but the Get Location Library should give us the information we need
   return (

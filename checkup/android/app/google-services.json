@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "561256439905",
+    "firebase_url": "https://check-up-c160b.firebaseio.com",
+    "project_id": "check-up-c160b",
+    "storage_bucket": "check-up-c160b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:561256439905:android:70fb7c1af3725ce35e8a20",
+        "android_client_info": {
+          "package_name": "com.checkup"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "561256439905-qeopqabu0bss9cj6mkbo7qm1j6k1ci0h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCII5EVSXW8cGIIacndMMhCwVSZIkWIGD4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "561256439905-qeopqabu0bss9cj6mkbo7qm1j6k1ci0h.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "561256439905-82q9tqfo4dnrkv5uuad3d0vajkgl8pvu.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.reactjs.native.example.checkup"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
