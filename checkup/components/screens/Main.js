@@ -4,8 +4,10 @@ import GetLocation from 'react-native-get-location';
 import auth from '@react-native-firebase/auth';
 import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
 import {GooglePlacesAutocomplete} from 'react-native-google-places-autocomplete';
+import Icon from 'react-native-vector-icons/FontAwesome';
 //Maps API Key:AIzaSyAtBj_iX2WW2bYNKg1iyB5b1fEphwYrjzw
 const Main = (props) => {
+  Icon.loadFont();
   const [location, setLocation] = useState({
     longitude: -122.023,
     latitude: 37.2638,
@@ -16,8 +18,7 @@ const Main = (props) => {
     console.log('hello');
     auth()
       .signOut()
-      .then(() => console.log('User signed out!'));
-    props.navigation.goBack();
+      .then(() => props.navigation.replace('Login'));
   };
 
   // GetLocation.getCurrentPosition({
@@ -35,8 +36,6 @@ const Main = (props) => {
   //Hard Coded to Saratoga, but the Get Location Library should give us the information we need
   return (
     <View style={styles.container}>
-      <Text>Main Screen</Text>
-
       <View style={styles.searchBar}>
         <GooglePlacesAutocomplete
           query={{

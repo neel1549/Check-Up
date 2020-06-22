@@ -10,26 +10,25 @@
 				<string>fb580746799312423</string>
 			</array>
 		</dict>
-    <dict>
-      <key>CFBundleTypeRole</key>
-      <string>Editor</string>
-      <key>CFBundleURLName</key>
-      <string>com.googleusercontent.apps.561256439905-82q9tqfo4dnrkv5uuad3d0vajkgl8pvu</string>
-      <key>CFBundleURLSchemes</key>
-      <array>
-        <string>com.googleusercontent.apps.561256439905-82q9tqfo4dnrkv5uuad3d0vajkgl8pvu</string>
-      </array>
-      </dict>
-    
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>com.googleusercontent.apps.561256439905-82q9tqfo4dnrkv5uuad3d0vajkgl8pvu</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.561256439905-82q9tqfo4dnrkv5uuad3d0vajkgl8pvu</string>
+			</array>
+		</dict>
 	</array>
 	<key>FacebookAppID</key>
 	<string>580746799312423</string>
 	<key>FacebookDisplayName</key>
 	<string>checkup</string>
 	<key>CFBundleGetInfoString</key>
-	<string></string>
+	<string/>
 	<key>LSApplicationCategoryType</key>
-	<string></string>
+	<string/>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
@@ -53,7 +52,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
@@ -81,5 +80,24 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>AntDesign.ttf</string>
+		<string>Entypo.ttf</string>
+		<string>EvilIcons.ttf</string>
+		<string>Feather.ttf</string>
+		<string>FontAwesome.ttf</string>
+		<string>FontAwesome5_Brands.ttf</string>
+		<string>FontAwesome5_Regular.ttf</string>
+		<string>FontAwesome5_Solid.ttf</string>
+		<string>Fontisto.ttf</string>
+		<string>Foundation.ttf</string>
+		<string>Ionicons.ttf</string>
+		<string>MaterialCommunityIcons.ttf</string>
+		<string>MaterialIcons.ttf</string>
+		<string>Octicons.ttf</string>
+		<string>SimpleLineIcons.ttf</string>
+		<string>Zocial.ttf</string>
+	</array>
 </dict>
 </plist>

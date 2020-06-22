@@ -17,7 +17,7 @@ const Loading = (props) => {
     if (!user) {
       props.navigation.replace('Login');
     } else {
-      props.navigation.navigate('Main');
+      props.navigation.replace('Home');
     }
   };
 

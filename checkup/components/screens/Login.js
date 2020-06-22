@@ -20,7 +20,7 @@ const Login = (props) => {
 
   function onAuthStateChanged(user) {
     if (user) {
-      props.navigation.navigate('Main');
+      props.navigation.replace('Home');
     }
   }
 
@@ -79,7 +79,7 @@ const Login = (props) => {
         (value) => {
           console.log(value);
           // If a success, navigate to the Main page
-          props.navigation.navigate('Main');
+          props.navigation.navigate('Home');
         },
         (reason) => {
           console.log(reason);
