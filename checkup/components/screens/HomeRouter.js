@@ -4,12 +4,15 @@ import {createDrawerNavigator} from '@react-navigation/drawer';
 import Main from './Main';
 import Profile from './Profile';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import CustomDrawerContent from '../assets/CustomDrawer';
 
 const Drawer = createDrawerNavigator();
 export default function HomeRouter(props) {
   Icon.loadFont();
   return (
-    <Drawer.Navigator initialRouteName="Main">
+    <Drawer.Navigator
+      initialRouteName="Main"
+      drawerContent={(props) => <CustomDrawerContent {...props} />}>
       <Drawer.Screen name="Main" component={Main} />
       <Drawer.Screen name="Profile" component={Profile} />
     </Drawer.Navigator>

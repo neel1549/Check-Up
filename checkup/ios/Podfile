@@ -15,6 +15,9 @@ def add_flipper_pods!(versions = {})
   pod 'FlipperKit/FlipperKitUserDefaultsPlugin', versions['Flipper'], :configuration => 'Debug'
   pod 'FlipperKit/FlipperKitReactPlugin', versions['Flipper'], :configuration => 'Debug'
 
+  #Mapbox
+  pod 'react-native-mapbox-gl', :path => '../node_modules/@react-native-mapbox-gl/maps'
+ 
   # List all transitive dependencies for FlipperKit pods
   # to avoid them being linked in Release builds
   pod 'Flipper', versions['Flipper'], :configuration => 'Debug'

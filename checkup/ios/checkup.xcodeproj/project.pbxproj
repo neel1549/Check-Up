@@ -12,31 +12,15 @@
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		164A3FD6FB474D32BF3F2D61 /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8446642FFF884DD9AB8FC95D /* AntDesign.ttf */; };
-		2726DF926ABB469BAE081DD8 /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C2840AECDF52489A8701427B /* FontAwesome5_Solid.ttf */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* checkupTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* checkupTests.m */; };
-		3133A2AB2C424661A9FD4FFE /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE6AB2EA737D42F884886B62 /* FontAwesome5_Regular.ttf */; };
 		362DFF3ECCBA7B4ED2D136E4 /* libPods-checkup-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 54146395E9E4E3EDA70CCA6F /* libPods-checkup-tvOSTests.a */; };
-		3E52045A65E24F06ADB36C92 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EC2BF7575762474186D73BE3 /* FontAwesome.ttf */; };
-		41997CDEE24C46AFA302DD64 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A8B811AEFE4F45119E9514B1 /* EvilIcons.ttf */; };
-		4C0AB1C880724E81888B4D5D /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EF7631781E1C48C087E0C838 /* MaterialIcons.ttf */; };
 		6EEDAF2B1C2163734146E704 /* libPods-checkup.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 79299EEF1AB94A4E58F45D7F /* libPods-checkup.a */; };
-		8AC1DB225F6843D1A7C181CA /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 46CF47D622D8458085841315 /* Entypo.ttf */; };
-		AD897C24E59F47B89BBF245A /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 183F7E84AA444ACC9CC31962 /* Feather.ttf */; };
-		C0563A49A4B546CB820BFB9A /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B106BC5BEBC24073BC91D0E6 /* FontAwesome5_Brands.ttf */; };
-		C49BFDB159FA4B71BBF77BF3 /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CFC117F6BC5C4900B303B4B8 /* Fontisto.ttf */; };
 		C62A76DB313AD32702815F06 /* libPods-checkup-checkupTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C8DD8269B907A000EB4D80C /* libPods-checkup-checkupTests.a */; };
-		C89FDF86FC114983950B12BA /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7BFB464712BD47CCBBCD26EC /* SimpleLineIcons.ttf */; };
-		CE3D2B44035B419F8529C667 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2F83B63B8D1544A6850616AA /* Ionicons.ttf */; };
 		DB5E220A7C21E1897DFB587E /* libPods-checkup-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3772192696C51AA5820F3 /* libPods-checkup-tvOS.a */; };
-		E1404538734748BBBEE81CF3 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B560D4A4B99940368068815D /* MaterialCommunityIcons.ttf */; };
 		E8511F482494A11A00647474 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E8511F472494A11A00647474 /* GoogleService-Info.plist */; };
-		F34E2412CEB4471ABE1A066E /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3CE3121B5504EF88CDDF25D /* Foundation.ttf */; };
-		F6C79A6E394642BABD823892 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BDF048ADB614442A968F7D98 /* Octicons.ttf */; };
-		F708BD27FA354A16971BF0A3 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC3F32950A31413B850F73ED /* Zocial.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -268,6 +252,7 @@
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
 				659A4C0BC2695F71248A10CD /* [CP] Copy Pods Resources */,
+				85CBDDD478C3F66C641A7CED /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -291,6 +276,7 @@
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				D2C679F79ECE3B1BE18EC49B /* [CP-User] [RNFB] Core Configuration */,
 				01B63349FD6D2B7C78724433 /* [CP] Copy Pods Resources */,
+				494400D4BE5AB5DE1409E2C7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -402,22 +388,6 @@
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				E8511F482494A11A00647474 /* GoogleService-Info.plist in Resources */,
-				164A3FD6FB474D32BF3F2D61 /* AntDesign.ttf in Resources */,
-				8AC1DB225F6843D1A7C181CA /* Entypo.ttf in Resources */,
-				41997CDEE24C46AFA302DD64 /* EvilIcons.ttf in Resources */,
-				AD897C24E59F47B89BBF245A /* Feather.ttf in Resources */,
-				3E52045A65E24F06ADB36C92 /* FontAwesome.ttf in Resources */,
-				C0563A49A4B546CB820BFB9A /* FontAwesome5_Brands.ttf in Resources */,
-				3133A2AB2C424661A9FD4FFE /* FontAwesome5_Regular.ttf in Resources */,
-				2726DF926ABB469BAE081DD8 /* FontAwesome5_Solid.ttf in Resources */,
-				C49BFDB159FA4B71BBF77BF3 /* Fontisto.ttf in Resources */,
-				F34E2412CEB4471ABE1A066E /* Foundation.ttf in Resources */,
-				CE3D2B44035B419F8529C667 /* Ionicons.ttf in Resources */,
-				E1404538734748BBBEE81CF3 /* MaterialCommunityIcons.ttf in Resources */,
-				4C0AB1C880724E81888B4D5D /* MaterialIcons.ttf in Resources */,
-				F6C79A6E394642BABD823892 /* Octicons.ttf in Resources */,
-				C89FDF86FC114983950B12BA /* SimpleLineIcons.ttf in Resources */,
-				F708BD27FA354A16971BF0A3 /* Zocial.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,6 +433,7 @@
 				"${PODS_ROOT}/FBSDKCoreKit/FacebookSDKStrings.bundle",
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+				"${PODS_ROOT}/MapboxMobileEvents/MapboxMobileEvents/Resources/logger.html",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
@@ -485,6 +456,7 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FacebookSDKStrings.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/logger.html",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AntDesign.ttf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Entypo.ttf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EvilIcons.ttf",
@@ -587,6 +559,46 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		494400D4BE5AB5DE1409E2C7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-checkup/Pods-checkup-frameworks.sh",
+				"${PODS_ROOT}/@react-native-mapbox-gl-mapbox-static/dynamic/MapboxMobileEvents.framework",
+				"${PODS_ROOT}/@react-native-mapbox-gl-mapbox-static/dynamic/MapboxMobileEvents.framework.dSYM",
+				"${PODS_ROOT}/@react-native-mapbox-gl-mapbox-static/dynamic/BADC3E19-B154-39DA-BE9A-E7C52B45BD0C.bcsymbolmap",
+				"${PODS_ROOT}/@react-native-mapbox-gl-mapbox-static/dynamic/F86F5A50-B0A0-3D96-8330-20AFDAC47DCC.bcsymbolmap",
+				"${PODS_ROOT}/@react-native-mapbox-gl-mapbox-static/dynamic/877E1F78-505A-34B9-A9A0-42F8BFA435B9.bcsymbolmap",
+				"${PODS_ROOT}/@react-native-mapbox-gl-mapbox-static/dynamic/7C38D00F-328F-3E0C-B30E-E47F366F0F3D.bcsymbolmap",
+				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework",
+				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework.dSYM",
+				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/EF3F193B-8B19-3D7A-9C4D-CC7ACB8FD1B2.bcsymbolmap",
+				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/AF8AFA46-95A0-3C36-89B4-0A23D7D0A613.bcsymbolmap",
+				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/224E36C4-6533-3853-8416-A668FDC17C35.bcsymbolmap",
+				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/E1D60A9C-E180-3412-BFDB-809E8A1C178E.bcsymbolmap",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MapboxMobileEvents.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/MapboxMobileEvents.framework.dSYM",
+				"${BUILT_PRODUCTS_DIR}/BADC3E19-B154-39DA-BE9A-E7C52B45BD0C.bcsymbolmap",
+				"${BUILT_PRODUCTS_DIR}/F86F5A50-B0A0-3D96-8330-20AFDAC47DCC.bcsymbolmap",
+				"${BUILT_PRODUCTS_DIR}/877E1F78-505A-34B9-A9A0-42F8BFA435B9.bcsymbolmap",
+				"${BUILT_PRODUCTS_DIR}/7C38D00F-328F-3E0C-B30E-E47F366F0F3D.bcsymbolmap",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapbox.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/Mapbox.framework.dSYM",
+				"${BUILT_PRODUCTS_DIR}/EF3F193B-8B19-3D7A-9C4D-CC7ACB8FD1B2.bcsymbolmap",
+				"${BUILT_PRODUCTS_DIR}/AF8AFA46-95A0-3C36-89B4-0A23D7D0A613.bcsymbolmap",
+				"${BUILT_PRODUCTS_DIR}/224E36C4-6533-3853-8416-A668FDC17C35.bcsymbolmap",
+				"${BUILT_PRODUCTS_DIR}/E1D60A9C-E180-3412-BFDB-809E8A1C178E.bcsymbolmap",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-checkup/Pods-checkup-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		6226DC00860D1AD2E3B17996 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -619,6 +631,7 @@
 				"${PODS_ROOT}/FBSDKCoreKit/FacebookSDKStrings.bundle",
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+				"${PODS_ROOT}/MapboxMobileEvents/MapboxMobileEvents/Resources/logger.html",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
@@ -641,6 +654,7 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FacebookSDKStrings.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/logger.html",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AntDesign.ttf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Entypo.ttf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EvilIcons.ttf",
@@ -661,6 +675,46 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-checkup-checkupTests/Pods-checkup-checkupTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		85CBDDD478C3F66C641A7CED /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-checkup-checkupTests/Pods-checkup-checkupTests-frameworks.sh",
+				"${PODS_ROOT}/@react-native-mapbox-gl-mapbox-static/dynamic/MapboxMobileEvents.framework",
+				"${PODS_ROOT}/@react-native-mapbox-gl-mapbox-static/dynamic/MapboxMobileEvents.framework.dSYM",
+				"${PODS_ROOT}/@react-native-mapbox-gl-mapbox-static/dynamic/BADC3E19-B154-39DA-BE9A-E7C52B45BD0C.bcsymbolmap",
+				"${PODS_ROOT}/@react-native-mapbox-gl-mapbox-static/dynamic/F86F5A50-B0A0-3D96-8330-20AFDAC47DCC.bcsymbolmap",
+				"${PODS_ROOT}/@react-native-mapbox-gl-mapbox-static/dynamic/877E1F78-505A-34B9-A9A0-42F8BFA435B9.bcsymbolmap",
+				"${PODS_ROOT}/@react-native-mapbox-gl-mapbox-static/dynamic/7C38D00F-328F-3E0C-B30E-E47F366F0F3D.bcsymbolmap",
+				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework",
+				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework.dSYM",
+				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/EF3F193B-8B19-3D7A-9C4D-CC7ACB8FD1B2.bcsymbolmap",
+				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/AF8AFA46-95A0-3C36-89B4-0A23D7D0A613.bcsymbolmap",
+				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/224E36C4-6533-3853-8416-A668FDC17C35.bcsymbolmap",
+				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/E1D60A9C-E180-3412-BFDB-809E8A1C178E.bcsymbolmap",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MapboxMobileEvents.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/MapboxMobileEvents.framework.dSYM",
+				"${BUILT_PRODUCTS_DIR}/BADC3E19-B154-39DA-BE9A-E7C52B45BD0C.bcsymbolmap",
+				"${BUILT_PRODUCTS_DIR}/F86F5A50-B0A0-3D96-8330-20AFDAC47DCC.bcsymbolmap",
+				"${BUILT_PRODUCTS_DIR}/877E1F78-505A-34B9-A9A0-42F8BFA435B9.bcsymbolmap",
+				"${BUILT_PRODUCTS_DIR}/7C38D00F-328F-3E0C-B30E-E47F366F0F3D.bcsymbolmap",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapbox.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/Mapbox.framework.dSYM",
+				"${BUILT_PRODUCTS_DIR}/EF3F193B-8B19-3D7A-9C4D-CC7ACB8FD1B2.bcsymbolmap",
+				"${BUILT_PRODUCTS_DIR}/AF8AFA46-95A0-3C36-89B4-0A23D7D0A613.bcsymbolmap",
+				"${BUILT_PRODUCTS_DIR}/224E36C4-6533-3853-8416-A668FDC17C35.bcsymbolmap",
+				"${BUILT_PRODUCTS_DIR}/E1D60A9C-E180-3412-BFDB-809E8A1C178E.bcsymbolmap",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-checkup-checkupTests/Pods-checkup-checkupTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D2C679F79ECE3B1BE18EC49B /* [CP-User] [RNFB] Core Configuration */ = {
