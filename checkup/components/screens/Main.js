@@ -4,6 +4,7 @@ import auth from '@react-native-firebase/auth';
 import MapboxGL from '@react-native-mapbox-gl/maps';
 import {GooglePlacesAutocomplete} from 'react-native-google-places-autocomplete';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import PlacesInput from 'react-native-places-input';
 
 MapboxGL.setAccessToken(
   'pk.eyJ1IjoibmVlbGtrIiwiYSI6ImNrY2NoaW85bzA0bnMyem54ZnRoNXo3NWQifQ.8YM4J2KD1rR8BABC34Yvww',
@@ -23,8 +24,10 @@ const Main = (props) => {
   };
 
   useEffect(() => {
+    console.log('hello');
     navigator.geolocation.getCurrentPosition(
       (position) => {
+        console.log(position);
         setLocation({
           latitude: position.coords.latitude,
           longitude: position.coords.longitude,
@@ -33,49 +36,40 @@ const Main = (props) => {
       (error) => {
         console.log(error);
       },
-    ),
-      [];
-  });
+    );
+  }, []);
+  console.log(location);
 
   //Hard Coded to Saratoga, but the Get Location Library should give us the information we need
   return (
     <View style={styles.container}>
-      <GooglePlacesAutocomplete
-        query={{
-          key: 'AIzaSyDlQf8TSET_y620Z1CYltuN0wPDdXTophg',
+      <View style={{zIndex: 5}}>
+        <PlacesInput
+          googleApiKey={'AIzaSyDlQf8TSET_y620Z1CYltuN0wPDdXTophg'}
+          placeHolder={'Some Place holder'}
+          language={'en-US'}
+          onSelect={(place) => {
+            setLocation({
+              latitude: place.result.geometry.location.lat,
+              longitude: place.result.geometry.location.lng,
+            });
 
-          language: 'en', // language of the results
-        }}
-        placeholder="Enter Location"
-        GooglePlacesDetailsQuery={{fields: 'geometry'}}
-        onPress={(data, details = null) => {
-          console.log(details);
-          setLocation({
-            longitude: details.geometry.location.lng,
-            latitude: details.geometry.location.lat,
-          });
-        }}
-        onFail={(error) => console.error(error)}
-        fetchDetails={true}
-      />
+            console.log(place.result.geometry.location);
+          }}
+        />
+      </View>
 
       <View style={styles.mapContainer}>
         <MapboxGL.MapView
           style={styles.map}
           styleURL="mapbox://styles/neelkk/ckcs8yh4z1lnk1iqxx9lvgxut"
-          showUserLocation={true}
           zoomLevel={13}
-          zoomEnabled={true}
-          attributionPosition={{top: 8, left: 8}}>
-          <MapboxGL.UserLocation />
-          <MapboxGL.UserLocation visible={true} minDisplacement={0} />
+          zoomEnabled={true}>
           <MapboxGL.Camera
-            ref={(c) => (this._mapCamera = c)}
             zoomLevel={12}
-            defaultSettings={{
-              centerCoordinate: [location.longitude, location.latitude],
-            }}
+            centerCoordinate={[location.longitude, location.latitude]}
           />
+          <MapboxGL.UserLocation visible={true} />
         </MapboxGL.MapView>
       </View>
       <TouchableOpacity>
