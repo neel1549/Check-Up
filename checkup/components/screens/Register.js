@@ -3,30 +3,39 @@ import {
   View,
   Text,
   ActivityIndicator,
-  ScrollView,
+  Image,
   TextInput,
   Button,
   StyleSheet,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import auth from '@react-native-firebase/auth';
+import firestore from '@react-native-firebase/firestore';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 
 const Login = (props) => {
   const [user, setUser] = useState('');
+  const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
   const [password, setPassword] = useState('');
 
   const registration = () => {
     console.log('hello');
     auth()
-      .createUserWithEmailAndPassword(user, password)
+      .createUserWithEmailAndPassword(email, password)
       .then(() => {
         console.log('User account created & signed in!');
+        firestore().collection('Users').doc(auth().currentUser.uid).set({
+          name: name,
+          email: email,
+          username: user,
+        });
         alert('Check your email for verification');
+
         auth()
           .currentUser.sendEmailVerification()
           .then(() => {});
-        props.navigation.navigate('Login');
+        props.navigation.navigate('Main');
       })
       .catch((error) => {
         if (error.code === 'auth/email-already-in-use') {
@@ -45,6 +54,18 @@ const Login = (props) => {
       <Text style={styles.header}>Check-Up Registration</Text>
 
       <View>
+        <TextInput
+          value={name}
+          onChangeText={(name) => setName(name)}
+          placeholder={'Name'}
+          style={styles.input}
+        />
+        <TextInput
+          value={email}
+          onChangeText={(email) => setEmail(email)}
+          placeholder={'Email'}
+          style={styles.input}
+        />
         <TextInput
           value={user}
           onChangeText={(username) => setUser(username)}
@@ -83,13 +104,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   input: {
-    width: 200,
+    width: 300,
     height: 44,
     padding: 10,
     borderWidth: 1,
     borderColor: 'black',
     marginBottom: 10,
   },
+
   button: {
     backgroundColor: '#DDDDDD',
     padding: 10,

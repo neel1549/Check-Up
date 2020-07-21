@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {View, StyleSheet} from 'react-native';
 import {
   DrawerItem,
@@ -18,10 +18,24 @@ import {
 } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import auth from '@react-native-firebase/auth';
+import firestore from '@react-native-firebase/firestore';
 
 export default function CustomDrawer(props) {
-  const user = auth().currentUser;
+  const [user, setUser] = useState({});
+  useEffect(() => {
+    const id = auth().currentUser.uid;
+    firestore()
+      .collection('Users')
+      .doc(id)
+      .get()
+      .then((currentUser) => {
+        setUser(currentUser);
+      });
+  }, []);
+  console.log(user);
+
   Icon.loadFont();
+
   return (
     <DrawerContentScrollView {...props}>
       <View style={styles.drawerContent}>
@@ -31,8 +45,12 @@ export default function CustomDrawer(props) {
             icon="account"
             style={{backgroundColor: 'orange'}}
           />
-          <Title style={styles.title}>{user.displayName}</Title>
-          <Caption style={styles.caption}>{user.email}</Caption>
+          <Title style={styles.title}>
+            {Object.keys(user).length !== 0 ? user['_data']['name'] : null}
+          </Title>
+          <Caption style={styles.caption}>
+            {Object.keys(user).length !== 0 ? user['_data']['email'] : null}
+          </Caption>
           <View style={styles.row}>
             <View style={styles.section}>
               <Paragraph style={[styles.paragraph, styles.caption]}>

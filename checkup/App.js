@@ -36,6 +36,7 @@ export default function App() {
                 onPress={() =>
                   navigation.dispatch(DrawerActions.toggleDrawer())
                 }
+                style={{paddingLeft: 5}}
               />
             ),
           })}
