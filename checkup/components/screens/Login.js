@@ -1,7 +1,16 @@
-import React, {useState, useEffect} from 'react';
-import {View, Text, TextInput, Button, StyleSheet} from 'react-native';
+import React, {useState, useEffect, Fragment} from 'react';
+import {
+  View,
+  Text,
+  TextInput,
+  ScrollView,
+  StyleSheet,
+  ImageBackground,
+} from 'react-native';
 import auth from '@react-native-firebase/auth';
 import {TouchableOpacity} from 'react-native-gesture-handler';
+import LoginScreen from 'react-native-login-screen';
+import {SocialIcon, Button} from 'react-native-elements';
 
 import {
   GoogleSignin,
@@ -94,84 +103,180 @@ const Login = (props) => {
   };
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>Check-Up</Text>
+      <ImageBackground
+        source={{
+          uri:
+            'https://images.unsplash.com/photo-1567939212041-672e42138104?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
+        }}
+        style={styles.backgroundImage}>
+        <View>
+          <View style={styles.header}>
+            <Text
+              style={{
+                fontSize: 40,
+                color: 'white',
+                fontFamily: 'AvenirNext-Medium',
+                alignItems: 'center',
+                opacity: 0.7,
+              }}>
+              Check Up
+            </Text>
+          </View>
 
-      <View>
-        <TextInput
-          value={user}
-          onChangeText={(username) => setUser(username)}
-          placeholder={'Username'}
-          style={styles.input}
-        />
-        <TextInput
-          value={password}
-          onChangeText={(password) => setPassword(password)}
-          placeholder={'Password'}
-          secureTextEntry={true}
-          style={styles.input}
-        />
+          <View style={styles.input}>
+            <TextInput
+              value={user}
+              onChangeText={(username) => setUser(username)}
+              placeholder={'Username'}
+              style={styles.textInput}
+              placeholderTextColor="white"
+            />
+            <TextInput
+              value={password}
+              onChangeText={(pass) => setPassword(pass)}
+              placeholder={'Password'}
+              secureTextEntry={true}
+              style={styles.textInput}
+              placeholderTextColor="white"
+            />
+          </View>
+          <View style={styles.button}>
+            <View style={styles.registerButton}>
+              <TouchableOpacity onPress={register}>
+                <Button
+                  title="Register"
+                  buttonStyle={{
+                    borderRadius: 20,
+                    width: 150,
+                    backgroundColor: 'orange',
+                  }}
+                />
+              </TouchableOpacity>
+            </View>
+            <View style={styles.loginButton}>
+              <TouchableOpacity onPress={authenticate}>
+                <Button
+                  title="Login"
+                  buttonStyle={{
+                    borderRadius: 20,
+                    width: 150,
+                    backgroundColor: 'orange',
+                  }}
+                />
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+        <View style={styles.socialButtons}>
+          <TouchableOpacity
+            onPress={() => {
+              onFacebookButtonPress()
+                .then(() => console.log('Signed in with Facebook!'))
+                .catch(function (reason) {
+                  console.log(reason);
+                });
+            }}>
+            <SocialIcon title="Sign In With Facebook" button type="facebook" />
+          </TouchableOpacity>
 
-        <TouchableOpacity style={styles.button} onPress={authenticate}>
-          <Button title={'Login'} color="orange" />
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.button} onPress={register}>
-          <Button title={'Register'} color="orange" />
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => {
-            onFacebookButtonPress()
-              .then(() => console.log('Signed in with Facebook!'))
-              .catch(function (reason) {
-                console.log(reason);
-              });
-          }}>
-          <Button title="Facebook Sign-In" />
-        </TouchableOpacity>
-
-        <GoogleSigninButton
-          style={styles.button}
-          size={GoogleSigninButton.Size.Wide}
-          color={GoogleSigninButton.Color.Dark}
-          onPress={() => {
-            onGoogleButtonPress()
-              .then(console.log('Signed in with Google'))
-              .catch(function (reason) {
-                console.log(reason);
-              });
-          }}
-        />
-      </View>
+          <TouchableOpacity>
+            <GoogleSigninButton
+              size={GoogleSigninButton.Size.Wide}
+              color={GoogleSigninButton.Color.Dark}
+              onPress={() => {
+                onGoogleButtonPress()
+                  .then(console.log('Signed in with Google'))
+                  .catch(function (reason) {
+                    console.log(reason);
+                  });
+              }}
+            />
+          </TouchableOpacity>
+        </View>
+      </ImageBackground>
     </View>
+
+    // <LoginScreen
+    //   usernameOnChangeText={(username) => setUser(username)}
+    //   passwordOnChangeText={(password) => setPassword(password)}
+    //   onPressLogin={() => {
+    //     authenticate();
+    //   }}
+    //   disableSettings={true}
+    //   logoComponent={
+    //     <Text
+    //       style={{fontSize: 40, color: 'white', fontFamily: 'Avenir-Roman'}}>
+    //       Check Up
+    //     </Text>
+    //   }
+    //   spinnerEnable={true}
+    //   source={{
+    //     uri:
+    //       'https://images.unsplash.com/photo-1567939212041-672e42138104?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
+    //   }}>
+    //   <View
+    //     style={{
+    //       position: 'relative',
+    //       alignSelf: 'center',
+    //       marginTop: 64,
+    //     }}>
+    //     <Text style={{color: 'white', fontSize: 30}}>
+    //       Inside Login Screen Component
+    //     </Text>
+    //   </View>
+    // </LoginScreen>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+  },
+  backgroundImage: {
+    flex: 1,
   },
   header: {
-    position: 'absolute',
-    top: 45,
-    fontSize: 20,
-    fontWeight: 'bold',
-    fontFamily: 'Courier',
     alignItems: 'center',
+    top: 45,
+    zIndex: 5,
+    opacity: 0.9,
   },
   input: {
-    width: 200,
-    height: 44,
-    padding: 10,
+    top: 440,
+    left: 15,
+    width: 450,
+    height: 50,
+    color: 'white',
+    opacity: 0.8,
+  },
+  textInput: {
+    width: '80%',
+    fontSize: 20,
+    backgroundColor: '#465881',
+    color: 'white',
+    fontFamily: 'AvenirNext-Medium',
+    borderRadius: 25,
+    height: '80%',
     borderWidth: 1,
-    borderColor: 'black',
-    marginBottom: 10,
+    padding: 10,
+    marginBottom: 20,
   },
   button: {
-    backgroundColor: '#DDDDDD',
-    padding: 10,
+    top: 520,
+    height: 80,
+    left: 45,
+    flexDirection: 'row',
+  },
+  loginButton: {
+    marginLeft: 30,
+  },
+
+  socialButtons: {
+    position: 'absolute',
+    top: 750,
+    left: 35,
+    height: 70,
+    opacity: 0.88,
   },
 });
 

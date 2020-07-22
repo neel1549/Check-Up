@@ -152,7 +152,7 @@ const Main = (props) => {
       {selectedCourt.length > 0 ? (
         <View>
           <Card>
-            <Card.Cover source={{uri: 'https://picsum.photos/700'}} />
+            <Card.Cover source={{uri: 'https://picsum.photos/750'}} />
             <Card.Content>
               <Title>{selectedCourt[0]}</Title>
               <Paragraph>{selectedCourt[1]}</Paragraph>

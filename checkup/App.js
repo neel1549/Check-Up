@@ -23,8 +23,20 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Loading" component={Loading} />
-        <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="Register" component={Register} />
+        <Stack.Screen
+          name="Login"
+          component={Login}
+          options={({navigation}) => ({
+            headerShown: false,
+          })}
+        />
+        <Stack.Screen
+          name="Register"
+          component={Register}
+          options={({navigation}) => ({
+            headerShown: false,
+          })}
+        />
         <Stack.Screen
           name="Home"
           component={HomeRouter}

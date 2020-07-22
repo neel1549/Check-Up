@@ -8,7 +8,7 @@ export default class Profile extends Component {
         <View style={styles.header}></View>
         <Image
           style={styles.avatar}
-          source={{uri: 'https://bootdey.com/img/Content/avatar/avatar6.png'}}
+          source={{uri: 'https://thispersondoesnotexist.com/image'}}
         />
         <View style={styles.body}>
           <View style={styles.bodyContent}>
@@ -34,7 +34,7 @@ export default class Profile extends Component {
 
 const styles = StyleSheet.create({
   header: {
-    backgroundColor: '#00BFFF',
+    backgroundColor: '#DCDCDC',
     height: 200,
   },
   avatar: {
